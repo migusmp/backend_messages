@@ -1,0 +1,26 @@
+[package]
+name = "backend_messages"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.8.1", features = ["macros", "multipart", "ws"] } 
+tower-http = { version = "0.6.1", features = ["full"] }
+futures = "0.3"
+tokio = { version = "1", features = ["full"] }
+tokio-tungstenite = "0.26.1"
+bcrypt = "0.17.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+cookie = "0.18.1"
+jsonwebtoken = "9.3.0"
+chrono = "0.4.38"
+headers = "0.4.0"
+reqwest = { version = "0.12", features = ["json"] }
+sqlx = { version = "0.8.3", features = ["macros", "postgres", "runtime-tokio", "time"] }
+dotenv = "0.15.0"
+rand = "0.9.0"
+# uuid = { version = "1.11.1", features = ["v4"] }
+serde_urlencoded = "0.7.1"
+rdkafka = "0.37.0"
+lazy_static = "1.4"
