@@ -11,7 +11,6 @@ pub async fn send_friend_request(
     pool: Arc<PgPool>,
     Extension(payload): Extension<Payload>,
     Path(friend_id): Path<String>,
-    _app_state: Arc<AppState>,
 ) -> Result<impl IntoResponse, ErrorRequest> {
     // Intentar parsear el ID del amigo
     let friend_id = friend_id
@@ -57,7 +56,6 @@ pub async fn accept_friend_request(
     pool: Arc<PgPool>,
     Extension(payload): Extension<Payload>,
     Path(user_requested_friend_id): Path<String>,
-    _app_state: Arc<AppState>,
 ) -> Result<impl IntoResponse, ErrorRequest> {
     let friend_requested_id = user_requested_friend_id
         .parse::<i32>()
